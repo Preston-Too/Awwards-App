@@ -27,3 +27,19 @@ class Profile(models.Model):
 
     def save_profile(self):
         self.save()
+
+
+class Projects(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
+    image =  CloudinaryField('image')
+    description = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    title = models.CharField(max_length=255)
+    link = models.URLField()
+    author_profile = models.ForeignKey(Profile, on_delete=models.CASCADE, default='1', blank = True)
+
+    def save_project(self):
+        self.save()
+
+    def __str__(self):
+        return f'{self.author} Post'
