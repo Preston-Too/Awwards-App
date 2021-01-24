@@ -1,6 +1,11 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from .forms import *
+from .models import *
+from django.contrib import messages
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import *
 
 
 @login_required(login_url='/accounts/login/')
@@ -113,3 +118,9 @@ def search_projects(request):
         message = "You haven't searched for any user"
 
         return render(request, 'search.html', {"message":message})
+
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        all_merch = Profile.objects.all()
+        serializers = ProfileSerializer(all_merch, many=True)
+        return Response(serializers.data)
