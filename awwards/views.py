@@ -94,3 +94,9 @@ def postproject(request):
         'form':form,
     }
     return render(request, 'PostProject.html', context)
+
+@login_required(login_url='/accounts/login/')
+def get_project(request, id):
+    project = Projects.objects.get(pk=id)
+
+    return render(request, 'project.html', {'project':project})
