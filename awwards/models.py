@@ -43,3 +43,23 @@ class Projects(models.Model):
 
     def __str__(self):
         return f'{self.author} Post'
+
+ class Meta:
+        db_table = 'project'
+        ordering = ['-created_date']
+
+    def delete_project(self):
+        self.delete()
+
+    @classmethod
+    def search_projects(cls,search_term):
+        project = cls.objects.filter(title__icontains=search_term)
+        return project
+
+    @classmethod
+    def get_project(cls,id):
+        try:
+            project = Projects.objects.get(pk=id)
+        except ObjectDoesNotExist:
+            raise Http404()
+        return Project
