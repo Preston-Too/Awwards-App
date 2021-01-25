@@ -16,7 +16,20 @@ class ProfileTest(TestCase):
         all_profiles = Profile.objects.all()
         self.assertTrue(len(all_profiles),0)
 
-    def test_delete_profile(self):
-        self.preston.delete_profile()
-        all_profiles = Profile.objects.all()
-        self.assertEqual(len(all_profiles),0)
+    
+
+class ProjectsTestCase(TestCase):
+    def setUp(self):
+        self.new_post = Projects(title = 'testT',image = 'test.jpg',description = 'testD',link = 'https://test.com',created_date='Jan,25.2021')
+
+
+    def test_save_project(self):
+        self.new_post.save_project()
+        image = Image.objects.all()
+        self.assertEqual(len(image),1)
+
+    def test_delete_project(self):
+        self.new_post.delete_project()
+        image = Projects.objects.all()
+        self.assertEqual(len(image),1) 
+
