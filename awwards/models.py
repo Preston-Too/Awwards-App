@@ -44,7 +44,7 @@ class Projects(models.Model):
     def __str__(self):
         return f'{self.author} Post'
 
- class Meta:
+    class Meta:
         db_table = 'project'
         ordering = ['-created_date']
 
