@@ -15,6 +15,12 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
+    def save_profile(self):
+        self.user
+
+    def delete_profile(self):
+        self.delete()  
+
     class Meta:
         db_table = 'profile'
 
