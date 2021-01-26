@@ -3,7 +3,7 @@
 [Preston-Too](https://github.com/Preston-Too)
 
 ## Live Link
-* [here] ()
+* [here] (https://my-awwards-app.herokuapp.com)
 
 ## Description
  Awwwards is a project made to enable users to register and post their projects. The users can also rate other existing projects on the website based on design, usability and content.
@@ -65,7 +65,8 @@ Open the application on your browser 127.0.0.1:8000.
 * Postman for visual representation while building the api
 
 ## Api Endpoints
-
+* https://my-awwards-app.herokuapp.com/api/profile
+* https://my-awwards-app.herokuapp.com/api/projects
 
 ## Known Bugs
 * There are no known bugs at the moment
