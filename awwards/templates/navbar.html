@@ -40,7 +40,7 @@
                         </span>
                         <h6 class="mb-0 pr-4 f-10">MENU</h6>
 </div>
-  <a class="navbar-brand" href="#"><b>Awwards App</b></a>
+  <a class="navbar-brand" href="{% url 'home'%}"><b>Awwards App</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -88,7 +88,7 @@
       <div class="navbar-nav">
             <div class="text-center">
             <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_projects' %}">
-            <input style="text-align: center;"  class="form-control" name="username" type="search" placeholder="Search... " aria-label="Search">
+            <input style="text-align: center;"  class="form-control" name="project" type="search" placeholder="Search... " aria-label="Search">
             </form>
         </div>
       </div>
